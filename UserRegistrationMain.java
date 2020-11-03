@@ -3,6 +3,8 @@ import java.util.Scanner;
 public class UserRegistrationMain{
  Scanner scanner = new Scanner(System.in);
     public static final String NAME_PATTERN = "^[A-Z]{1}[a-z]{2}[a-z]*$";
+    public static final String EMAIL_PATTERN = "^[a-zA-Z0-9+_-]+(?:\\.[a-zA-Z0-9_-]+)*@[a-zA-Z0-9]+(?:\\.[a-zA-Z]{2,}){1,2}$";
+
 
  public void checkPattern(String matchstring, String pattern) {
         if (matchstring.matches(pattern)) {
@@ -19,6 +21,9 @@ public void userInput() {
 	System.out.println("Enter your lastname starts with uppercase and minimum three characters");
         String lastname = scanner.next();
         checkPattern(lastname, NAME_PATTERN);
+	System.out.println("Enter your email");
+        String email = scanner.next();
+        checkPattern(email, EMAIL_PATTERN);
 	}
 
  public static void main(String[] args) {
