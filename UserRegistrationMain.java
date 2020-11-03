@@ -16,6 +16,9 @@ public void userInput() {
         System.out.println("Enter your firstname starts with uppercase and minimum three characters");
         String firstname = scanner.next();
 	checkPattern(firstname, NAME_PATTERN);
+	System.out.println("Enter your lastname starts with uppercase and minimum three characters");
+        String lastname = scanner.next();
+        checkPattern(lastname, NAME_PATTERN);
 	}
 
  public static void main(String[] args) {
