@@ -5,7 +5,8 @@ public class UserRegistrationMain{
     public static final String NAME_PATTERN = "^[A-Z]{1}[a-z]{2}[a-z]*$";
     public static final String EMAIL_PATTERN = "^[a-zA-Z0-9+_-]+(?:\\.[a-zA-Z0-9_-]+)*@[a-zA-Z0-9]+(?:\\.[a-zA-Z]{2,}){1,2}$";
     public static final String NUMBER_PATTERN = "^(\\d{2})\\-([6-9]{1}\\d{9})$";
-
+    public static final String PASSWORD_PATTERN = "^(?=.*[0-9])" + "(?=.*[a-z])(?=.*[A-Z])" + "(?=.*[@#$%^&+=])"
+            + "(?=\\S+$).{8,}$";
 
  public void checkPattern(String matchstring, String pattern) {
         if (matchstring.matches(pattern)) {
@@ -28,6 +29,10 @@ public void userInput() {
 	System.out.println("enter your mobilenumber with countrycode followed by -");
         String mobileNumber = scanner.next();
         checkPattern(mobileNumber, NUMBER_PATTERN);
+	System.out.println("Enter your password\n"
+                + "password should contain combination of uppercase,lowercase,number,special character and minimum 8 characters");
+        String password = scanner.next();
+        checkPattern(password, PASSWORD_PATTERN);
 	}
 
  public static void main(String[] args) {
