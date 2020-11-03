@@ -1,7 +1,25 @@
+import java.util.Scanner;
+
 public class UserRegistrationMain{
+ Scanner scanner = new Scanner(System.in);
+    public static final String NAME_PATTERN = "^[A-Z]{1}[a-z]{2}[a-z]*$";
+
+ public void checkPattern(String matchstring, String pattern) {
+        if (matchstring.matches(pattern)) {
+            System.out.println("valid");
+        } else {
+            System.out.println("Invalid");
+        }
+    }
+
+public void userInput() {
+        System.out.println("Enter your firstname starts with uppercase and minimum three characters");
+        String firstname = scanner.next();
+	checkPattern(firstname, NAME_PATTERN);
+	}
+
  public static void main(String[] args) {
-System.out.println("WELCOME TO USER REGISTRATION PROJECT");
-System.out.println("User Registration System needs to ensure all validations are in place during the User Entry");
-System.out.println("Thank you");
+	UserRegistrationMain user = new UserRegistrationMain();
+        user.userInput();
     }
 }
